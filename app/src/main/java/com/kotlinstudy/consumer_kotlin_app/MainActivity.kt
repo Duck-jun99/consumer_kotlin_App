@@ -43,17 +43,8 @@ class MainActivity : AppCompatActivity() {
 
         btn_dbdatalist.setOnClickListener {
 
-
-            //dbDataFragment 생성 코드 시작
-            val fragmet_dbDataList = supportFragmentManager.beginTransaction()
-            fragmet_dbDataList.replace(
-                R.id.framelayout1,
-                dbDataFragment()
-            )
-            fragmet_dbDataList.commit()
-            //dbDataFragment 생성 코드 종료
-
             if (et_post_value.text.toString() == "7"){
+
                 api.getData().enqueue(object : Callback<List<Datamodel>>
                 {
                     //서버 요청 성공
@@ -79,8 +70,6 @@ class MainActivity : AppCompatActivity() {
                                     Log.d("sensorZ", "${data.sensorZ}")
 
                                     //dbDataFragment로 intent해서 보내기 위한 dbDataAll 생성 과정
-
-
                                     dbDataAll.add(dbListData("${data.logId}", "${data.sensorX}","${data.sensorY}","${data.sensorZ}"))
                                 }
 
@@ -90,6 +79,15 @@ class MainActivity : AppCompatActivity() {
 
                                 //MainActvity의 Data를 dbDataFragment로 intent
                                 intent.putExtra("DB_Data_all", dbDataAll)
+
+                                //dbDataFragment 생성 코드 시작
+                                val fragmet_dbDataList = supportFragmentManager.beginTransaction()
+                                fragmet_dbDataList.replace(
+                                    R.id.framelayout1,
+                                    dbDataFragment()
+                                )
+                                fragmet_dbDataList.commit()
+                                //dbDataFragment 생성 코드 종료
                             }
 
                             catch (e: JSONException) {
@@ -112,6 +110,8 @@ class MainActivity : AppCompatActivity() {
             }
             else{ Toast.makeText(this, "Password값 틀림", Toast.LENGTH_SHORT).show() }
         }
+
+
 
     }
 

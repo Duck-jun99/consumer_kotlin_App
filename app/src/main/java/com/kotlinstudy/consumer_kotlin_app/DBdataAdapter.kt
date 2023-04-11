@@ -8,15 +8,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class DBdataAdapter(private val context: Context) : RecyclerView.Adapter<DBdataAdapter.ViewHolder>() {
+class DBdataAdapter(private var datas: MutableList<dbListData>) : RecyclerView.Adapter<DBdataAdapter.ViewHolder>() {
 
-    var datas = mutableListOf<dbListData>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.db_item_recyclerview,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.db_item_recyclerview,parent,false)
         return ViewHolder(view)
     }
-
 
     override fun getItemCount(): Int = datas.size
 
