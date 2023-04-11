@@ -1,4 +1,4 @@
-package com.kotlinstudy.consumer_kotlin_app
+package com.kotlinstudy.consumer_kotlin_app.network
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -15,7 +15,15 @@ data class Datamodel(
 
     @SerializedName("Sensor_x")
     @Expose
-    var sensorX: String?
+    var sensorX: String?,
+
+    @SerializedName("Sensor_y")
+    @Expose
+    var sensorY: String?,
+
+    @SerializedName("Sensor_z")
+    @Expose
+    var sensorZ: String?
 )
 
 

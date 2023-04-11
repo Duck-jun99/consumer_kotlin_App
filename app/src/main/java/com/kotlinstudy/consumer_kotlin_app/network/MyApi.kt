@@ -1,11 +1,9 @@
-package com.kotlinstudy.consumer_kotlin_app
+package com.kotlinstudy.consumer_kotlin_app.network
 
-import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.google.gson.annotations.SerializedName
+import com.kotlinstudy.consumer_kotlin_app.Secret
 import com.squareup.moshi.Moshi
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
@@ -21,11 +19,7 @@ interface MyApi {
         "accept: application/json",
         "content-type: application/x-www-form-urlencoded; charset=utf-8"
     )
-    fun getData(
-
-        //@Body data: PostModel
-        //@Field를 사용하고 @FormUrlEncoded를 사용해야 올바른 Json형식으로 넘어감
-    ): Call<List<Datamodel>>
+    fun getData(): Call<List<Datamodel>>
 
     companion object {
         fun create(): MyApi {
@@ -36,8 +30,9 @@ interface MyApi {
             }
             val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
 
-            val moshi: Moshi = Moshi.Builder().build()
-            val converterFactory: MoshiConverterFactory = MoshiConverterFactory.create(moshi)
+            // Moshi 사용 안함.
+            //val moshi: Moshi = Moshi.Builder().build()
+            //val converterFactory: MoshiConverterFactory = MoshiConverterFactory.create(moshi)
 
             return Retrofit.Builder()
                 .baseUrl(Secret.MY_IP_ADDRESS)
