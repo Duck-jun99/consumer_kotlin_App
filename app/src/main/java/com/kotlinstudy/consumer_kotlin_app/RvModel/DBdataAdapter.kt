@@ -1,14 +1,13 @@
-package com.kotlinstudy.consumer_kotlin_app
+package com.kotlinstudy.consumer_kotlin_app.RvModel
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.kotlinstudy.consumer_kotlin_app.R
 
-class DBdataAdapter(private var datas: MutableList<dbListData>) : RecyclerView.Adapter<DBdataAdapter.ViewHolder>() {
+class DBdataAdapter(public var datas: MutableList<dbListData>) : RecyclerView.Adapter<DBdataAdapter.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -31,10 +30,10 @@ class DBdataAdapter(private var datas: MutableList<dbListData>) : RecyclerView.A
 
         fun bind(item: dbListData) {
 
-            tvRecyclerLogID.text = item.Lod_ID
-            tvRecyclerSensorX.text = item.Sensor_x
-            tvRecyclerSensorY.text = item.Sensor_y
-            tvRecyclerSensorZ.text = item.Sensor_z
+            tvRecyclerLogID.text = "Log_ID: " + item.Lod_ID
+            tvRecyclerSensorX.text = "X: " + item.Sensor_x
+            tvRecyclerSensorY.text = "Y: " + item.Sensor_y
+            tvRecyclerSensorZ.text = "Z: " + item.Sensor_z
 
         }
     }

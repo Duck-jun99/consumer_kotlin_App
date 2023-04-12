@@ -1,4 +1,4 @@
-package com.kotlinstudy.consumer_kotlin_app
+package com.kotlinstudy.consumer_kotlin_app.RvModel
 
 data class dbListData(
     val Lod_ID : String,
