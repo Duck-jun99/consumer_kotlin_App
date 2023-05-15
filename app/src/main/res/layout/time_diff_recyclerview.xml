@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="10dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_server_get_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="서버에 담긴 Log_ID(시간)"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/tv_real_get_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="어플에서 받은 시간"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/diff_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="시간 차이"
+        android:textSize="15sp"/>
+
+
+
+</LinearLayout>

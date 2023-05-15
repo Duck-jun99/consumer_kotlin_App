@@ -6,37 +6,39 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:layout_weight="10">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="2">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-
-            <EditText
-                android:id="@+id/et_post_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="password"/>
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btn_dbdatalist_open"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="데이터 리스트 열기"
+                android:text="GET요청"
                 android:gravity="center"/>
 
             <Button
                 android:id="@+id/btn_main_screen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="메인 화면으로"
+                android:text="메인 화면"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/btn_debug"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="시간 확인"
                 android:gravity="center"/>
 
         </LinearLayout>
@@ -45,46 +47,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/description"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description2"/>
 
     </LinearLayout>
 
     <FrameLayout
         android:id="@+id/framelayout1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="3">
+        android:layout_height="0dp"
+        android:layout_weight="8">
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/dbdatalist_fragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:name="com.kotlinstudy.consumer_kotlin_app.dbDataFragment" />
-
+            android:name="com.kotlinstudy.consumer_kotlin_app.DBData.dbDataFragment" />
 
     </FrameLayout>
-
-    <!--
-    <TextView
-        android:id="@+id/tv_logId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="서버에서 받아온 Log_ID 보일 곳"/>
-    <TextView
-        android:id="@+id/tv_sensorX"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="서버에서 받아온 Sensor_x 보일 곳"/>
-    <TextView
-        android:id="@+id/tv_sensorY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="서버에서 받아온 Sensor_y 보일 곳"/>
-    <TextView
-        android:id="@+id/tv_sensorZ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="서버에서 받아온 Sensor_z 보일 곳"/>
-        -->
-
 
 </LinearLayout>

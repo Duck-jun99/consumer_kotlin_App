@@ -1,4 +1,4 @@
-package com.kotlinstudy.consumer_kotlin_app
+package com.kotlinstudy.consumer_kotlin_app.DBData
 
 import android.os.Bundle
 import android.util.Log
@@ -8,8 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.kotlinstudy.consumer_kotlin_app.RvModel.DBdataAdapter
-import com.kotlinstudy.consumer_kotlin_app.RvModel.dbListData
+import com.kotlinstudy.consumer_kotlin_app.R
 
 
 class dbDataFragment : Fragment() {
