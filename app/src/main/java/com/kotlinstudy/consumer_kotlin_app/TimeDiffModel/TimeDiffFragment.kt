@@ -93,11 +93,16 @@ class TimeDiffFragment : Fragment() {
                             if (response.isSuccessful) {
 
                                 try {
-                                    val responseList = response.body()
-                                    val resultStr = StringBuilder()
+                                    var responseList = response.body()
+
+                                    if (responseList != null) {
+                                        responseList = listOf(responseList.last())
+                                    }
 
                                     // List에서 하나씩 꺼내서 처리
                                     responseList?.forEach { data ->
+
+                                        Log.e("data 속 정보: ", data.toString())
 
                                         // 새로운 값을 리스트에 추가
                                         dbDataAll.add(TimeDiffListData("${data.logId}", formattedDateTime.toString()))

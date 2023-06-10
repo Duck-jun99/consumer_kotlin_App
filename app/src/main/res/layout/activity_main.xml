@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:layout_weight="10">
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        android:layout_weight="2">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,15 +55,14 @@
     <FrameLayout
         android:id="@+id/framelayout1"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="8">
+        android:layout_height="match_parent">
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/dbdatalist_fragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:name="com.kotlinstudy.consumer_kotlin_app.DBData.dbDataFragment" />
+            android:name="com.kotlinstudy.consumer_kotlin_app.DBData.dbDataFragment"/>
 
     </FrameLayout>
 
-</LinearLayout>
+</FrameLayout>

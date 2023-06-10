@@ -1,23 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainImageView.MainFragment">
+    android:orientation="vertical"
+    tools:context=".MainImageView.MainFragment"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/start_get"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="start"/>
+
+        <Button
+            android:id="@+id/stop_get"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="stop"/>
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="뒤로가기"/>
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="상태:4학년"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
 
     <GridLayout
         android:id="@+id/guitarviewScreen"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#000000">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/guitarview"
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:src="@drawable/guitar"/>
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/icon_a_plus"/>
+
+        <TextView
+            android:id="@+id/tv_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아주 훌륭한 성적으로\n졸업했답니다~"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="30dp"
+            android:visibility="invisible"/>
 
     </GridLayout>
 
-</FrameLayout>
+</LinearLayout>
